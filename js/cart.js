@@ -2,11 +2,18 @@ const cartArray = [];
 
 function displayPlayers(players) {
 
+
+
+
+
+
+
     const playerList = document.getElementById('players-cart');
     playerList.innerHTML = '';
 
 
     if (cartArray.length < 6) {
+
 
         for (let i = 0; i < players.length; i++) {
             const addPlayer = cartArray[i].playerName;
@@ -18,15 +25,20 @@ function displayPlayers(players) {
             <li>${i + 1}. <span>${addPlayer}</span></li>
             `;
             playerList.appendChild(ol);
+
+            document.getElementById('player-count').innerText = cartArray.length;
         }
+
+
 
     }
 
     else {
-        alert('You have selected Top Five!')
+        alert('You have selected Top Five!');
     }
 
 }
+
 
 
 
@@ -43,12 +55,6 @@ function addToCart(element) {
 
 
 
-    if (cartArray.length < 6) {
-        document.getElementById('player-count').innerText = cartArray.length;
-    }
-    else {
-        alert('You already selected five');
-    }
 
     displayPlayers(cartArray);
 
