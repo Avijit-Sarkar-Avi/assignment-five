@@ -31,6 +31,9 @@ function displayPlayers(players) {
 
 
 function addToCart(element) {
+
+
+
     const playerName = element.parentNode.parentNode.children[0].innerText;
 
     const playerObj = {
@@ -38,9 +41,16 @@ function addToCart(element) {
     }
     cartArray.push(playerObj);
 
-    document.getElementById('player-count').innerText = cartArray.length;
-    displayPlayers(cartArray);
 
+
+    if (cartArray.length < 6) {
+        document.getElementById('player-count').innerText = cartArray.length;
+    }
+    else {
+        alert('You already selected five');
+    }
+
+    displayPlayers(cartArray);
 
 
     if (cartArray.length < 6) {
@@ -50,6 +60,7 @@ function addToCart(element) {
     else {
         element.disabled = false;
     }
+
 
 
 }

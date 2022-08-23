@@ -31,11 +31,7 @@ document.getElementById('btn-player').addEventListener('click', function () {
     const fivePlayerCost = perPlayerCost * playerCount;
 
     const totalPlayer = getTextFieldById('total-playercost');
-
-
-
     const totalPlayerCost = totalPlayer + fivePlayerCost;
-
 
     setTextElementValueById('total-playercost', totalPlayerCost);
 })
