@@ -45,6 +45,7 @@ function addToCart(element) {
 
     if (cartArray.length < 6) {
         element.disabled = true;
+        element.style.color = 'black';
     }
     else {
         element.disabled = false;
