@@ -41,7 +41,5 @@ function addToCart(element) {
     document.getElementById('player-count').innerText = cartArray.length;
     displayPlayers(cartArray);
 
-
-
 }
 
