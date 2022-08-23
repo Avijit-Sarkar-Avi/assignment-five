@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Best Five</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg-black">
+
+    <!-- Header Start  -->
+    <header class="bg-[url('images/pep.png')] bg-no-repeat bg-left-top">
+        <div class="p-36">
+            <h1 class="text-6xl text-orange-600 text-right">Select Your Best Five</h1>
+            <br>
+            <p class="text-white pl-96">Manchester City Football Club is an English football club based in
+                Manchester that
+                competes in the
+                Premier League, the top flight of English football. Founded in 1880 St. Mark's (West Gorton), it became
+                Ardwick Association Football Club in 1887 and Manchester City in 1894.</p>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Start -->
+    <main class="w-9/12 mx-auto mt-5 pb-20">
+        <div class="grid grid-cols-4 gap-4 divide-x">
+
+            <div class="border-black">
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img src="images/forden.jpg" alt="Forden" class="w-full h-40" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Forden</h2>
+                        <p class="flex space-x-7"><span>36 Goals</span><span>.</span><span>120 Assist</span>
+                        </p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary w-52" onclick="addToCart(this)">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-black">
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img src="images/enderson.jpg" alt="Enderson" class="w-full h-40" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Enderson</h2>
+                        <p class="flex space-x-7"><span>36 Goals</span><span>.</span><span>120 Assist</span>
+                        </p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary w-52" onclick="addToCart(this)">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-black">
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img src="images/grillish.jpg" alt="Grillish" class="w-full h-40" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Grillish</h2>
+                        <p class="flex space-x-7"><span>36 Goals</span><span>.</span><span>120 Assist</span>
+                        </p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary w-52" onclick="addToCart(this)">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Players -->
+            <div class="text-center text-white">
+                <h4 class="text-3xl text-white">Selected <span id="player-count">0</span></h4>
+
+                <div id="players-cart">
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="border-black">
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img src="images/haaland.jpg" alt="Haaland" class="w-full h-40" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Haaland</h2>
+                        <p class="flex space-x-7"><span>36 Goals</span><span>.</span><span>120 Assist</span>
+                        </p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary w-52" onclick="addToCart(this)">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="border-black">
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img src="images/kdb.jpg" alt="Kdb" class="w-full h-40" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">KDB</h2>
+                        <p class="flex space-x-7"><span>36 Goals</span><span>.</span><span>120 Assist</span>
+                        </p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary w-52" onclick="addToCart(this)">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="border-black">
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img src="images/mahraz.jpg" alt="Mahraz" class="w-full h-40" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Mahraz</h2>
+                        <p class="flex space-x-7"><span>36 Goals</span><span>.</span><span>120 Assist</span>
+                        </p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary w-52" onclick="addToCart(this)">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Budget -->
+
+            <div class="p-4">
+                <h4 class="text-3xl text-white text-center">Budget</h4>
+                <br>
+                <span class="text-slate-300">Per Player: </span><input type="text" class="w-24" id="player-cost">
+                <br><br>
+                <button id="btn-player" class="btn bg-sky-500 w-52">Calculate</button>
+                <br><br>
+                <p class="text-slate-300">Player Expenses: $<span id="total-playercost">0</span></p>
+                <br>
+                <span class="text-slate-300">Manager: </span><input id="manager-cost" type="text" class="w-24">
+                <br><br>
+                <span class="text-slate-300">Coach: </span><input id="caoch-cost" type="text" class="w-24">
+                <br><br>
+                <button id="btn-total" class="btn bg-sky-500 w-52">Calculate Total</button>
+                <br>
+                <p class="text-orange-300">Total: $<span id="total-cost">0</span></p>
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+    <script src="js/calculation.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
