@@ -41,5 +41,15 @@ function addToCart(element) {
     document.getElementById('player-count').innerText = cartArray.length;
     displayPlayers(cartArray);
 
+
+
+    if (cartArray.length < 6) {
+        element.disabled = true;
+    }
+    else {
+        element.disabled = false;
+    }
+
+
 }
 

@@ -25,8 +25,13 @@ function setTextElementValueById(textFieldId, newValue) {
 document.getElementById('btn-player').addEventListener('click', function () {
     const perPlayerCost = getInputFieldById('player-cost');
     const playerCount = getTextFieldById('player-count');
+
     const fivePlayerCost = perPlayerCost * playerCount;
+
+
+
     const totalPlayer = getTextFieldById('total-playercost');
+
     const totalPlayerCost = totalPlayer + fivePlayerCost;
 
     setTextElementValueById('total-playercost', totalPlayerCost);
